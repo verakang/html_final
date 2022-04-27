@@ -142,6 +142,8 @@ table {
 
 body {
     background-color: #232323;
+    font-family: "Microsoft JhengHei";
+
 }
 
 .wrap {
@@ -387,7 +389,12 @@ body {
 .course .course_list li {
     margin: 10px;
     padding: 10px;
-    box-shadow: 1px 1px 10px #ccc;
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+.course .course_list li:hover {
+    cursor: pointer;
+    background-color: #efeeee;
 }
 
 .course .course_list .course_poto {
