@@ -1,0 +1,794 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ----------------以上為CSS RESET----------------  */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #232323;
+}
+
+.wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #fff;
+}
+
+.top {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.topbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(100, 100, 120, 0.3);
+}
+
+.topbar .toplogo a {
+    display: block;
+    margin-left: 10px;
+    width: 182px;
+    height: 36px;
+    background: url("img/logo.png");
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.topbar ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.topbar ul a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 5px solid rgba(150, 50, 50, 0);
+}
+
+.topbar ul a:hover {
+    color: #00cc99;
+    border-bottom: 5px solid #00cc99;
+}
+
+/* ----------------以上為TOP----------------  */
+
+.banner {
+    width: 100%;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+    background-color: #232323;
+}
+
+/* banner採用背景圖片置入大圖，故增加class替換底圖。  */
+.index_bg {
+    background: url("img/bg_index.png") center center no-repeat;
+    background-size: cover;
+}
+
+.course_bg {
+    background: url("img/bg_course.png") center center no-repeat;
+    background-size: cover;
+}
+
+.qa_bg {
+    background: url("img/bg_QA.png") center center no-repeat;
+    background-size: cover;
+}
+
+/* 各頁banner文字結構不同，故透過替換大圖新增之class個別設定樣式。  */
+.index_bg h1,
+.index_bg h2 {
+    font-size: 36px;
+    color: #00cc99;
+    line-height: 2em;
+    letter-spacing: 2px;
+}
+
+.index_bg h1 span {
+    color: #fff;
+}
+
+.course_bg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course_bg .imgs {
+    align-self: flex-start;
+    margin-top: 100px;
+    margin-right: 30px;
+}
+
+.course_bg h2 {
+    font-size: 36px;
+    color: #fff;
+    line-height: 2em;
+    letter-spacing: 2px;
+}
+
+.course_bg h3 {
+    font-size: 22px;
+    color: #00cc99;
+}
+
+.qa_bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+}
+
+.qa_bg div {
+    text-align: center;
+}
+
+.qa_bg h2 {
+    font-size: 36px;
+    color: #fff;
+    line-height: 2em;
+    letter-spacing: 2px;
+}
+
+.qa_bg h3 {
+    font-size: 22px;
+    color: #00cc99;
+    margin-bottom: 30px;
+}
+
+.qa_bg .search::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f002";
+    color: #000;
+    position: absolute;
+    font-size: 16px;
+    right: 10px;
+    top: 10px;
+}
+
+.index_bg .banner_btn,
+.course_bg .banner_btn {
+    width: 160px;
+    text-align: center;
+    background-color: #00cc99;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.index_bg .banner_btn a,
+.course_bg .banner_btn a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.index_bg .banner_btn a::after,
+.course_bg .banner_btn a::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    content: "\f061";
+    color: #fff;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.qa_bg .search {
+    position: relative;
+}
+
+.qa_bg .search input {
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+}
+
+/* ----------------以上為BANNER----------------  */
+
+.course {
+    margin-top: 50px;
+    padding: 0 30px;
+}
+
+/* 共同樣式較多，直接寫在一起。 */
+.course .caption,
+.compare .caption,
+.strength .caption,
+.outline .caption,
+.qna .caption {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: 25px;
+}
+
+/* 共同樣式較多，直接寫在一起。 */
+.course .caption h3,
+.compare .caption h3,
+.strength .caption h3,
+.outline .caption h3,
+.qna .caption h3 {
+    font-size: 28px;
+    color: #00cc99;
+}
+
+/* 共同樣式較多，直接寫在一起。 */
+.course .caption p,
+.compare .caption p,
+.strength .caption p,
+.outline .caption p,
+.qna .caption p {
+    font-size: 18px;
+    color: #aaa;
+    margin-left: 15px;
+}
+
+.course .course_list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.course .course_list li {
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 1px 1px 10px #ccc;
+}
+
+.course .course_list .course_poto {
+    max-width: 280px;
+    height: 175px;
+}
+
+.course .course_list .html5 {
+    background: url("img/html5.png") center center no-repeat;
+}
+
+.course .course_list .rwd {
+    background: url("img/rwd.png") center center no-repeat;
+}
+
+.course .course_list .jquery {
+    background: url("img/jquery.png") center center no-repeat;
+}
+
+.course .course_list h4 {
+    text-align: center;
+    font-size: 20px;
+}
+
+.course .course_list p {
+    font-size: 16px;
+    margin-top: 10px;
+    line-height: 1.5em;
+    color: #aaa;
+    padding: 10px 20px;
+}
+
+/* ----------------以上為COURSE----------------  */
+
+.compare {
+    margin-top: 50px;
+    padding: 0 30px;
+}
+
+table tr th,
+table tr td {
+    width: 300px;
+    text-align: center;
+    font-size: 16px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+table tr th {
+    background-color: #ebebeb;
+}
+
+table .mark {
+    color: #00cc99;
+}
+
+/* ----------------以上為COMPARE----------------  */
+
+.connect {
+    margin-top: 50px;
+    background-color: #ebebeb;
+    padding: 130px 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.connect div {
+    width: 50%;
+}
+
+.connect .connect_ads h3 {
+    font-size: 26px;
+    line-height: 1.8em;
+    padding-left: 50px;
+}
+
+.connect .connect_data {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+}
+
+.connect .connect_data input,
+.connect .connect_data textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 16px;
+    color: #ebebeb;
+}
+
+.connect .connect_data .submit {
+    position: absolute;
+    bottom: 60px;
+    right: 40px;
+    width: 10%;
+    background-color: #00cc99;
+    cursor: pointer;
+}
+
+/* ----------------以上為CONNECT----------------  */
+
+.footer {
+    background-color: #323228;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 10px;
+}
+
+.footer .footer_logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end
+}
+
+.footer .footer_logo p {
+    color: #9b9b9b;
+    padding-right: 5px;
+}
+
+.footer ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.footer ul li {
+    padding-left: 10px;
+}
+
+/* ----------------以上為FOOTER----------------  */
+
+/* 以上為INDEX內容、以下COURSE開始 */
+
+.teachers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    padding: 0px 150px;
+}
+
+.teachers div {
+    /* padding: 0 10px; */
+    width: 36%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teachers div:nth-child(2) {
+    width: 28%;
+    align-items: flex-start;
+}
+
+.teachers div img {
+    text-align: center;
+    width: 80%;
+}
+
+.teachers h3 {
+    font-size: 28px;
+    color: #00cc99;
+}
+
+.teachers h4 {
+    font-size: 28px;
+    color: #000;
+    margin-top: 10px;
+}
+
+.teachers div ul li {
+    list-style: disc;
+    margin: 8px 0;
+    color: #9b9b9b;
+}
+
+/* ----------------以上為TEACHERS----------------  */
+
+.strength {
+    margin-top: 50px;
+    padding: 0px 150px;
+}
+
+.strength ul li {
+    line-height: 1.5em;
+}
+
+/* ----------------以上為STRENGTH----------------  */
+
+.outline {
+    margin-top: 50px;
+    padding: 0px 150px;
+}
+
+.outline ul li {
+    width: 100%;
+    padding: 15px;
+}
+
+.outline ul li:nth-child(odd) {
+    background-color: #ebebeb;
+}
+
+.outline ul li:nth-child(even) {
+    color: #aaa;
+}
+
+/* ----------------以上為OUTLINE----------------  */
+
+.register {
+    width: 100%;
+    margin-top: 50px;
+    background-color: #ebebeb;
+    padding: 130px 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.register div {
+    width: 50%;
+}
+
+.register .register_ads h3 {
+    font-size: 26px;
+    line-height: 1.8em;
+}
+
+.register .register_btn {
+    width: 30%;
+    align-self: flex-end;
+    text-align: center;
+    background-color: #00cc99;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.register .register_btn a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.register .register_btn a::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f061";
+    color: #fff;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+/* ----------------以上為REGISTER----------------  */
+
+/* 以上為COURSE內容、以下Q&A開始 */
+
+.qna {
+    margin-top: 50px;
+    padding: 0px 150px;
+}
+
+.qna .question {
+    font-size: 20px;
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
+
+.qna .answer {
+    font-size: 16px;
+    color: #9b9b9b;
+    line-height: 1.5em;
+    margin-bottom: 30px;
+}
+
+.qna .answer ol {
+    padding-left: 50px;
+    list-style: decimal;
+}
+
+.qna .answer ol li {
+    font-size: 16px;
+    color: #9b9b9b;
+    line-height: 1.5em;
+}
+
+.qna .answer ul {
+    padding-left: 50px;
+    list-style: disc;
+}
+
+.qna .answer ul li {
+    font-size: 16px;
+    color: #9b9b9b;
+    line-height: 1.5em;
+}
+
+.qna .notice {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
+
+.qna .answer span {
+    color: #00cc99;
+}
+
+/* 以下為自適應調整 */
+
+@media (max-width:768px) {
+    .course .course_list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .course .course_list .course_poto {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .connect {
+        flex-direction: column;
+    }
+
+    .connect div {
+        width: 100%;
+    }
+
+    .connect .connect_ads {
+        margin-bottom: 30px;
+    }
+
+    /* ----------------以上為INDEX調整----------------  */
+
+    .course_bg .imgs {
+        display: none;
+    }
+
+    .teachers {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .teachers div {
+        width: 100%;
+    }
+
+    .teachers div:nth-child(2) {
+        padding-left: 0;
+    }
+
+    .teachers img {
+        max-width: 50%;
+        padding: 0 20px;
+    }
+
+    .teachers,
+    .strength,
+    .outline {
+        padding: 0px 30px;
+    }
+
+    .register {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 20px;
+    }
+
+
+    .register .register_btn {
+        align-self: center;
+        width: 40%;
+        margin-top: 40px;
+        margin-left: 0;
+    }
+
+    .strength .caption p {
+        display: none;
+    }
+
+    /* ----------------以上為COURSE調整----------------  */
+
+    .qa_bg .search input {
+        width: 400px;
+    }
+
+    .qna {
+        padding: 0px 30px;
+    }
+
+    /* ----------------以上為Q&A調整----------------  */
+}
