@@ -143,7 +143,6 @@ table {
 body {
     background-color: #232323;
     font-family: "Microsoft JhengHei";
-
 }
 
 .wrap {
@@ -164,7 +163,6 @@ body {
 
 .topbar {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(100, 100, 120, 0.3);
@@ -183,7 +181,6 @@ body {
 
 .topbar ul {
     display: flex;
-    flex-direction: row;
 }
 
 .topbar ul a {
@@ -191,13 +188,31 @@ body {
     padding: 20px;
     text-decoration: none;
     color: #fff;
-    border-bottom: 5px solid rgba(150, 50, 50, 0);
+    position: relative;
 }
 
-.topbar ul a:hover {
+.topbar ul a:after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
     color: #00cc99;
+    border-bottom: 5px solid transparent;
+    transition: 0.5s;
+}
+
+.topbar ul a:hover:after {
+    width: 100%;
     border-bottom: 5px solid #00cc99;
 }
+
+
+
+/* .topbar ul a:hover {
+    color: #00cc99;
+    border-bottom: 5px solid #00cc99;
+} */
 
 /* ----------------以上為TOP----------------  */
 
@@ -228,7 +243,6 @@ body {
 }
 
 /* 各頁banner文字結構不同，故透過替換大圖新增之class個別設定樣式。  */
-.index_bg h1,
 .index_bg h2 {
     font-size: 36px;
     color: #00cc99;
@@ -236,10 +250,11 @@ body {
     letter-spacing: 2px;
 }
 
-.index_bg h1 span {
+.index_bg h2 span {
     color: #fff;
 }
 
+/* 前面.banner採用column排列，這邊要再用row蓋掉設定。 */
 .course_bg {
     display: flex;
     flex-direction: row;
@@ -307,6 +322,7 @@ body {
     background-color: #00cc99;
     margin-top: 20px;
     border-radius: 10px;
+    transition: 0.5s;
 }
 
 .index_bg .banner_btn a,
@@ -316,6 +332,12 @@ body {
     text-decoration: none;
     font-size: 20px;
     padding: 10px;
+}
+
+.index_bg .banner_btn:hover,
+.course_bg .banner_btn:hover {
+    background-color: #44e8bf;
+    border-radius: 10px;
 }
 
 .index_bg .banner_btn a::after,
@@ -353,7 +375,6 @@ body {
 .outline .caption,
 .qna .caption {
     display: flex;
-    flex-direction: row;
     align-items: flex-end;
     margin-bottom: 25px;
 }
@@ -382,7 +403,6 @@ body {
 .course .course_list {
     width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
 }
 
@@ -394,7 +414,7 @@ body {
 
 .course .course_list li:hover {
     cursor: pointer;
-    background-color: #efeeee;
+    background-color: #f0f3f0;
 }
 
 .course .course_list .course_poto {
@@ -443,6 +463,10 @@ table tr td {
     border-bottom: 1px solid #ebebeb;
 }
 
+table tr:hover {
+    background-color: #e6fff7;
+}
+
 table tr th {
     background-color: #ebebeb;
 }
@@ -458,8 +482,6 @@ table .mark {
     background-color: #ebebeb;
     padding: 130px 0;
     display: flex;
-    flex-direction: row;
-    position: relative;
 }
 
 .connect div {
@@ -473,6 +495,7 @@ table .mark {
 }
 
 .connect .connect_data {
+    width: 50%;
     display: flex;
     flex-direction: column;
     padding: 0 40px;
@@ -488,13 +511,20 @@ table .mark {
     color: #ebebeb;
 }
 
+.connect .connect_data textarea {
+    height: 100px;
+}
+
 .connect .connect_data .submit {
-    position: absolute;
-    bottom: 60px;
-    right: 40px;
-    width: 10%;
+    align-self: end;
+    width: 20%;
     background-color: #00cc99;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.connect .connect_data .submit:hover {
+    background-color: #44e8bf;
 }
 
 /* ----------------以上為CONNECT----------------  */
@@ -502,8 +532,8 @@ table .mark {
 .footer {
     background-color: #323228;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 15px 10px;
 }
 
@@ -520,7 +550,6 @@ table .mark {
 
 .footer ul {
     display: flex;
-    flex-direction: row;
     align-items: center;
     padding-right: 20px;
 }
@@ -535,7 +564,6 @@ table .mark {
 
 .teachers {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
@@ -543,15 +571,12 @@ table .mark {
 }
 
 .teachers div {
-    /* padding: 0 10px; */
-    width: 36%;
-    display: flex;
-    flex-direction: column;
+    width: 35%;
     align-items: center;
 }
 
 .teachers div:nth-child(2) {
-    width: 28%;
+    width: 25%;
     align-items: flex-start;
 }
 
@@ -584,8 +609,13 @@ table .mark {
     padding: 0px 150px;
 }
 
-.strength ul li {
+.strength ol {
+    margin-left: 20px;
+}
+
+.strength ol li {
     line-height: 1.5em;
+    list-style: decimal;
 }
 
 /* ----------------以上為STRENGTH----------------  */
@@ -598,6 +628,7 @@ table .mark {
 .outline ul li {
     width: 100%;
     padding: 15px;
+    border-radius: 5px;
 }
 
 .outline ul li:nth-child(odd) {
@@ -608,6 +639,10 @@ table .mark {
     color: #aaa;
 }
 
+.outline ul li:hover {
+    background-color: #e6fff7;
+}
+
 /* ----------------以上為OUTLINE----------------  */
 
 .register {
@@ -616,7 +651,6 @@ table .mark {
     background-color: #ebebeb;
     padding: 130px 150px;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -637,6 +671,11 @@ table .mark {
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 10px;
+    transition: 0.5s
+}
+
+.register .register_btn:hover {
+    background-color: #44e8bf;
 }
 
 .register .register_btn a {
@@ -661,8 +700,9 @@ table .mark {
 /* 以上為COURSE內容、以下Q&A開始 */
 
 .qna {
+    width: 80%;
+    margin: 0 auto;
     margin-top: 50px;
-    padding: 0px 150px;
 }
 
 .qna .question {
@@ -706,8 +746,9 @@ table .mark {
     line-height: 1.5em;
 }
 
-.qna .answer span {
+.qna .answer span a {
     color: #00cc99;
+    text-decoration: none;
 }
 
 /* 以下為自適應調整 */
@@ -715,21 +756,20 @@ table .mark {
 @media (max-width:768px) {
     .course .course_list {
         width: 100%;
-        display: flex;
         flex-direction: column;
     }
 
 
     .course .course_list .course_poto {
-        margin: 0 auto;
-        margin-bottom: 20px;
+        margin: 0 auto 20px auto;
     }
 
     .connect {
         flex-direction: column;
     }
 
-    .connect div {
+    .connect div,
+    .connect .connect_data {
         width: 100%;
     }
 
@@ -744,13 +784,16 @@ table .mark {
     }
 
     .teachers {
-        display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
     .teachers div {
-        width: 100%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 10px;
     }
 
     .teachers div:nth-child(2) {
@@ -769,12 +812,10 @@ table .mark {
     }
 
     .register {
-        display: flex;
         flex-direction: column;
         align-items: center;
         padding: 100px 20px;
     }
-
 
     .register .register_btn {
         align-self: center;
@@ -795,6 +836,10 @@ table .mark {
 
     .qna {
         padding: 0px 30px;
+    }
+
+    .qna .caption p {
+        display: none;
     }
 
     /* ----------------以上為Q&A調整----------------  */
